@@ -5,7 +5,21 @@
     <h1>id: {{ $task->id }} のタスク編集ページ</h1>
     
     <div class="row">
-        <div class="col-xs-6">
+        <div class="col-sm-8"></div>
+        <div class="col-sm-offset-2 col-sm-8"></div>
+
+    
+        <div class="row">
+           <div class="col-md-8"></div>
+           <div class="col-md-offset-2 col-md-8"></div>
+        </div>    
+    
+         <div class="row">
+           <div class="col-lg-6"></div>
+           <div class="col-lg-offset-3 col-lg-6"></div>
+        </div>     
+    
+            
             {!! Form::model($task, ['route' => ['tasks.update', $task->id], 'method' => 'put']) !!}
                 <div class="form-group">
                     {!! Form::label('status', 'ステータス:') !!}
@@ -20,7 +34,6 @@
                 {!! Form::submit('更新', ['class' => 'btn btn-default']) !!}
         
             {!! Form::close() !!}
-        </div>
     </div>
 
 @endsection

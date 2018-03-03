@@ -18,10 +18,10 @@ class TasksController extends Controller
      */
     public function index()
     {
-        $tasks = Task::all();
+        $users = User::paginate(10);
         
-        return view('tasks.index', [
-            'tasks' => $tasks
+        return view('users.index', [
+            'users' => $users,
         ]);
     }
 

@@ -1,5 +1,7 @@
 <?php
 
+use \App\User;
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -7,8 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-use \App\User;
-
+use App\Task;
 class TasksController extends Controller
 {
     /**
@@ -28,7 +29,7 @@ class TasksController extends Controller
                 'tasks' => $tasks,
             ];
         }
-        return view('tasks', $data);
+        return view('tasks.index', $data);
     }
 
     /**
@@ -130,6 +131,6 @@ class TasksController extends Controller
             $task->delete();
         }
 
-        return redirect()->back();
+        return redirect()->route('tasks.index');
     }
 }

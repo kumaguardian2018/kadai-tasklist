@@ -3,7 +3,7 @@
 @section('content')
 
     <h1>タスクリスト一覧</h1>
-
+    @if (\Auth::check())
     @if (count($tasks) > 0)
         <table class="table table-striped">
             <thead>
@@ -23,6 +23,7 @@
                 @endforeach
             </tbody>
         </table>
+    @endif
     @endif
     {!! link_to_route('tasks.create', '新規タスクの投稿', null, ['class' => 'btn btn-primary']) !!}
 @endsection
